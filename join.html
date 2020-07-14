@@ -1,48 +1,87 @@
-<!-- 
-This code is property of ntrx
- Dont looking to here!
- -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title>The Ntrx Group - The Future People Community</title>
-	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge" />
-	<meta http-equiv="Content-Type" content="text/html; charset=cp1251" />
-	<meta name="description" Content="The Ntrx Group.">
-<meta name="keywords" Content="сміла, ntrx, the ntrx group, the ntrx group departments">
-	<link rel="shortcut icon" href="favicon.ico" />
-<!--<link href="blue.css" rel="stylesheet" type="text/css" />-->
-<link href="style/under.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="style/jQuery1.2.6.js"></script>
-<script type="text/javascript" src="style/jQueryCyclePlugin.js"></script>
-<script type="text/javascript" src="style/jQueryEasing.js"></script>
-</head>
+<title>TESTING ONLY</title>
+THIS PAGE UNDER CONSTRUCTION
+<hr>
+<?php
+//header("Location:login.html"); // редирект на предыдущую страницу
+/*$ip = $_SERVER['REMOTE_ADDR'];
+$hostaddress = gethostbyaddr($ip);
+$browser = $_SERVER['HTTP_USER_AGENT'];
+$referred = $_SERVER['HTTP_REFERER']; // a quirky spelling mistake that stuck in php
+$date_today = $date["m.d.y"]; 
+$today = $date["H:i:s"]; 
+$url = $_SERVER['REQUEST_URI'];*/
 
-<body >
+$name = $_POST['nickname']; 
+$email = $_POST['email'];
 
-<div id="head">
+$text .= "Nickname: $nickname \n"; 
+$text .= "Email: $email \n"; 
+if (!empty($nickname) && !empty($email)) //если все переменные имеют значения выполняем запись в файл
 
-</div>
-<table id="maincontent">
-	<tr>
-		<td align="center" valign="middle">
-		<!--	<div id="logo"></div>-->
-			<!-- HERE YOU CAN POST STH -->
-			
+    {
+$file = fopen ("request.txt", "a+"); //открываем для перезаписи файл message.txt лежаший в одной папке с текущей страницей
 
-					</span>
+    fwrite ($file,$text); // пишем в файл
+
+    fclose ($file); // закрываем файл
+    }
+ 
+?>
+
+<form action="request.txt" method="post">
+<p><small>Your nickname</small>
+<input type="text" name="nickname" id="nickname" value="" size="20" />
+</p>
+<p><small>First Name</small>
+<input type="text" name="fname" id="fname" value="" size="20" />
+</p>
+<p><small>Second Name</small>
+<input type="text" name="sname" id="sname" value="" size="25" />
+</p>
+<p><small>E-mail</small>
+<input type="text" name="email" id="email" value="" size="30" />
+</p>
+<p><small>Password</small>
+<input type="text" name="password" id="password" value="" size="6" />
+</p>
+<p><small>VK.com</small>
+<input type="text" name="vk" id="vk" value="" size="25" />
+</p>
+<p><small>Facebook.com</small>
+<input type="text" name="fc" id="fc" value="" size="40" />
+</p>
+<p><small>Odnoklassniki.com</small>
+<input type="text" name="od" id="od" value="" size="40" />
+</p>
+<p><small>Mail.ru</small>
+<input type="text" name="mail.ru" id="mail.ru" value="" size="25" />
+</p>
+<p><small>Phone Number</small>
+<input type="text" name="phone" id="phone" value="" size="15" />
+</p>
+<p><small>Skype</small>
+<input type="text" name="skype" id="skype" value="" size="25" />
+</p>
+<p><small>Town, Country</small>
+<input type="text" name="country" id="country" value="" size="40" />
+</p>
+<p><small>Address</small>
+<input type="text" name="address" id="address" value="" size="50" />
+</p>
+<p><small>Index</small>
+<input type="text" name="index" id="index" value="" size="5" />
+</p>
+<form name="male_female" action="" method="post">
+Sex:
+<input type="radio" name="Sex" value="Male" checked="checked" />Male
+<input type="radio" name="Sex" value="Female" />Female<br />
 
 
-<!--<span class="center">Важно: <a href="f/viewtopic.php?f=3&t=4">viewtopic.php?f=3&t=4</a></span>-->
+<p><small>Why you want to join us?</small>
+<textarea name="why" id="why" cols="48" rows="8"> </textarea>
+</p>
+<input type="submit" name="enter" value="Send request" />
+</form>
+<!--<pre><?php include ("request.txt")?></pre>-->
 
-		</td>
-	</tr>
-</table>
-<div id="foot">
-<br><br>
-
-</div>
-
-</body>
-</html>
 
